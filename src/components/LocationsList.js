@@ -22,7 +22,13 @@ export default function LocationsList() {
     <div>
       {locations &&
         locations.map(location => (
-          <LocationCard key={location.id} location={location} />
+          <LocationCard
+            key={location.id}
+            name={location.name}
+            type={location.type}
+            dimension={location.dimension}
+            residents={location.residents}
+          />
         ))}
     </div>
   )
