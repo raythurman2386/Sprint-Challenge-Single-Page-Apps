@@ -28,21 +28,27 @@ export default function TabNav() {
             onClick={handleItemClick}
           />
         </NavLink>
-        <Menu.Item
-          name='characters'
-          active={activeItem === 'characters'}
-          onClick={handleItemClick}
-        />
-        <Menu.Item
-          name='locations'
-          active={activeItem === 'locations'}
-          onClick={handleItemClick}
-        />
-        <Menu.Item
-          name='episodes'
-          active={activeItem === 'episodes'}
-          onClick={handleItemClick}
-        />
+        <NavLink to='/characters'>
+          <Menu.Item
+            name='characters'
+            active={activeItem === 'characters'}
+            onClick={handleItemClick}
+          />
+        </NavLink>
+        <NavLink to='/locations'>
+          <Menu.Item
+            name='locations'
+            active={activeItem === 'locations'}
+            onClick={handleItemClick}
+          />
+        </NavLink>
+        <NavLink to='/episodes'>
+          <Menu.Item
+            name='episodes'
+            active={activeItem === 'episodes'}
+            onClick={handleItemClick}
+          />
+        </NavLink>
         <Menu.Menu position='right'>
           <Menu.Item>
             <Input icon='search' placeholder='Search...' />
