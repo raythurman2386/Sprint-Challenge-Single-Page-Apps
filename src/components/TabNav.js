@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Input, Tab, Menu, Icon } from 'semantic-ui-react'
+import { Input, Menu, Icon } from 'semantic-ui-react'
 import { NavLink } from 'react-router-dom'
 
 // TODO: Add missing menu/tabs/nav below
@@ -21,11 +21,13 @@ export default function TabNav() {
   return (
     <div>
       <Menu pointing>
-        <Menu.Item
-          name='home'
-          active={activeItem === 'home'}
-          onClick={handleItemClick}
-        />
+        <NavLink to='/'>
+          <Menu.Item
+            name='home'
+            active={activeItem === 'home'}
+            onClick={handleItemClick}
+          />
+        </NavLink>
         <Menu.Item
           name='characters'
           active={activeItem === 'characters'}

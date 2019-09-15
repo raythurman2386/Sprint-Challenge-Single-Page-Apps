@@ -10,19 +10,19 @@ export default function LocationsList() {
   useEffect(() => {
     Axios
       // Get the data
-      .get()
+      .get('https://rickandmortyapi.com/api/location/')
       // Do something with the data
-      .then()
+      .then(res => setLocations(res.data.results))
       // Do something with the error
-      .catch()
+      .catch(err => console.log(err))
   }, [])
 
   return (
     // map over the locations and send to the locationCard component
     <div>
       {locations &&
-        locations.map((location, index) => (
-          <LocationCard key={index} location={location} />
+        locations.map(location => (
+          <LocationCard key={location.id} location={location} />
         ))}
     </div>
   )
