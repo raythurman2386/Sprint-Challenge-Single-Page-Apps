@@ -12,7 +12,7 @@ import { NavLink } from 'react-router-dom'
 
 export default function TabNav() {
   // Hook to set the active item
-  const [activeItem, setActiveItem] = useState('home')
+  const [activeItem, setActiveItem] = useState()
 
   const handleItemClick = e => {
     setActiveItem(e.target.name)
@@ -20,7 +20,7 @@ export default function TabNav() {
 
   return (
     <div>
-      <Menu pointing>
+      <Menu>
         <NavLink to='/'>
           <Menu.Item
             name='home'
