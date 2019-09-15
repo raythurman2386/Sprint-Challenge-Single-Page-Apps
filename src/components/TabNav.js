@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Input, Segment, Tab, Menu, Icon } from 'semantic-ui-react'
+import { Input, Tab, Menu, Icon } from 'semantic-ui-react'
 import { NavLink } from 'react-router-dom'
 
 // TODO: Add missing menu/tabs/nav below
