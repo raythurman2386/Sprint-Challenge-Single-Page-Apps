@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Input, Menu, Icon } from 'semantic-ui-react'
 import { NavLink } from 'react-router-dom'
+import SearchForm from './SearchForm'
 
 export default function Header() {
   return (
@@ -52,9 +53,7 @@ function TabNav() {
           />
         </NavLink>
         <Menu.Menu position='right'>
-          <Menu.Item>
-            <Input icon='search' placeholder='Search...' />
-          </Menu.Item>
+          <SearchForm />
         </Menu.Menu>
       </Menu>
     </div>
