@@ -2,10 +2,9 @@ import React, { useEffect, useState } from 'react'
 import Axios from 'axios'
 import { useSpring, animated, config } from 'react-spring'
 import styled from 'styled-components'
+import { Card, Image } from 'semantic-ui-react'
 
-// Components
-import CharacterCard from './CharacterCard'
-
+// Character List Component
 export default function CharacterList() {
   // TODO: Add useState to track data from useEffect
   const [characters, setCharacters] = useState([])
@@ -40,3 +39,20 @@ export default function CharacterList() {
 }
 
 const StyledSection = styled(animated.section)``
+
+// Character Card Component
+function CharacterCard({ character }) {
+  return (
+    <Card>
+      <Image src={character.image} alt={character.name} />
+      <Card.Content>
+        <Card.Header>{character.name}</Card.Header>
+        <Card.Meta>
+          {character.species} {character.status}
+        </Card.Meta>
+        <Card.Description>Origin: {character.origin.name}</Card.Description>
+        <Card.Description>Location: {character.location.name}</Card.Description>
+      </Card.Content>
+    </Card>
+  )
+}

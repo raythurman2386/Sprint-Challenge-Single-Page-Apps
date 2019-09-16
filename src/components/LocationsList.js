@@ -2,9 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Axios from 'axios'
 import { useSpring, animated, config } from 'react-spring'
 import styled from 'styled-components'
-
-// Component
-import LocationCard from './LocationCard'
+import { Card, Icon } from 'semantic-ui-react'
 
 export default function LocationsList() {
   // set up hook for location state
@@ -47,3 +45,19 @@ export default function LocationsList() {
 }
 
 const StyledSection = styled(animated.section)``
+
+// Location Card Component
+function LocationCard({ name, type, dimension, residents }) {
+  // console.log(residents.length)
+  return (
+    <Card>
+      <Card.Content header={name} />
+      <Card.Content description={type} />
+      <Card.Content description={dimension} />
+      <Card.Content extra>
+        <Icon name='user' />
+        Residents: {residents.length}
+      </Card.Content>
+    </Card>
+  )
+}
