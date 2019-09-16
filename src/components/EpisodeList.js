@@ -2,9 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Axios from 'axios'
 import { useSpring, animated, config } from 'react-spring'
 import styled from 'styled-components'
-
-// Components
-import EpisodeCard from './EpisodeCard'
+import { Card, Icon } from 'semantic-ui-react'
 
 export default function EpisodeList() {
   // set up hook for location state
@@ -41,3 +39,15 @@ export default function EpisodeList() {
 }
 
 const StyledSection = styled(animated.section)``
+
+// Refactoring for less components
+function EpisodeCard({ episode }) {
+  // console.log(episode)
+
+  return (
+    <Card>
+      <Card.Content header={episode.name} />
+      <Card.Content description={episode.air_date} />
+    </Card>
+  )
+}
