@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Axios from 'axios'
 import { useSpring, animated, config } from 'react-spring'
+import styled from 'styled-components'
 
 // Components
 import CharacterCard from './CharacterCard'
@@ -13,7 +14,7 @@ export default function CharacterList() {
   const cardAnimation = useSpring({
     from: { opacity: 0 },
     opacity: 1,
-    delay: 400,
+    delay: 800,
     config: config.gentle,
   })
 
@@ -28,16 +29,14 @@ export default function CharacterList() {
   // console.log(characters)
 
   return (
-    <section
-      animated
-      className='character-list grid-view'
-      style={cardAnimation}
-    >
+    <StyledSection className='character-list grid-view' style={cardAnimation}>
       {/* <h2>TODO: `array.map()` over your state here!</h2> */}
       {characters &&
         characters.map((character, index) => (
           <CharacterCard key={index} character={character} />
         ))}
-    </section>
+    </StyledSection>
   )
 }
+
+const StyledSection = styled(animated.section)``

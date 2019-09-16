@@ -1,10 +1,22 @@
 import React, { useEffect, useState } from 'react'
 import Axios from 'axios'
+import { useSpring, animated, config } from 'react-spring'
+import styled from 'styled-components'
+
+// Component
 import LocationCard from './LocationCard'
 
 export default function LocationsList() {
   // set up hook for location state
   const [locations, setLocations] = useState([])
+
+  // Animation stretch
+  const cardAnimation = useSpring({
+    from: { opacity: 0 },
+    opacity: 1,
+    delay: 800,
+    config: config.gentle,
+  })
 
   // set up the useEffect to grab the locations
   useEffect(() => {
@@ -19,7 +31,7 @@ export default function LocationsList() {
 
   return (
     // map over the locations and send to the locationCard component
-    <section className='character-list grid-view'>
+    <StyledSection className='character-list grid-view' style={cardAnimation}>
       {locations &&
         locations.map(location => (
           <LocationCard
@@ -30,6 +42,8 @@ export default function LocationsList() {
             residents={location.residents}
           />
         ))}
-    </section>
+    </StyledSection>
   )
 }
+
+const StyledSection = styled(animated.section)``
