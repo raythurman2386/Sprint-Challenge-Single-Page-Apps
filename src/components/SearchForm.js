@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Input, Menu, Icon } from 'semantic-ui-react'
+import { Input, Menu } from 'semantic-ui-react'
 
 export default function SearchForm({ onSearch }) {
   // STRETCH TODO: Add stateful logic for query/form data

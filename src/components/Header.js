@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Input, Menu, Icon } from 'semantic-ui-react'
+import { Menu } from 'semantic-ui-react'
 import { NavLink } from 'react-router-dom'
 import SearchForm from './SearchForm'
 
@@ -15,15 +15,15 @@ export default function Header() {
 // Tab nav
 function TabNav() {
   // Hook to set the active item
-  const [activeItem, setActiveItem] = useState()
+  const [activeItem, setActiveItem] = useState('home')
 
-  const handleItemClick = e => {
-    setActiveItem(e.target.name)
+  const handleItemClick = (e, { name }) => {
+    setActiveItem(name)
   }
 
   return (
     <div>
-      <Menu>
+      <Menu pointing>
         <NavLink to='/'>
           <Menu.Item
             name='home'

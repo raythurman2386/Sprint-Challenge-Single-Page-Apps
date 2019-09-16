@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Axios from 'axios'
 import { useSpring, animated, config } from 'react-spring'
 import styled from 'styled-components'
-import { Card, Icon } from 'semantic-ui-react'
+import { Card } from 'semantic-ui-react'
 
 export default function EpisodeList() {
   // set up hook for location state
