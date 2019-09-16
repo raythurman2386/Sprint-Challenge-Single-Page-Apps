@@ -19,7 +19,7 @@ export default function LocationsList() {
 
   return (
     // map over the locations and send to the locationCard component
-    <div>
+    <section className='character-list grid-view'>
       {locations &&
         locations.map(location => (
           <LocationCard
@@ -30,6 +30,6 @@ export default function LocationsList() {
             residents={location.residents}
           />
         ))}
-    </div>
+    </section>
   )
 }
