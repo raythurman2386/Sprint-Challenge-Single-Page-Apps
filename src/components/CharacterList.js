@@ -33,19 +33,17 @@ export default function CharacterList() {
   }
 
   const prevPage = () => {
-    setPage(page - 1)
+    page === 1 ? setPage(page) : setPage(page - 1)
   }
 
   return (
     <>
-      {page === 1 ? (
-        <Button onClick={nextPage}>Next Page</Button>
-      ) : (
+      <ButtonWrapper>
         <>
-          <Button onClick={prevPage}>Prev Page</Button>{' '}
+          <Button onClick={prevPage}>Prev Page</Button> <p>{page}</p>
           <Button onClick={nextPage}>Next Page</Button>
         </>
-      )}
+      </ButtonWrapper>
       <StyledSection className='character-list grid-view' style={cardAnimation}>
         {/* <h2>TODO: `array.map()` over your state here!</h2> */}
         {characters &&
@@ -58,6 +56,12 @@ export default function CharacterList() {
 }
 
 const StyledSection = styled(animated.section)``
+const ButtonWrapper = styled.div`
+  margin: 10px auto;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+`
 
 // Character Card Component
 function CharacterCard({ character }) {
