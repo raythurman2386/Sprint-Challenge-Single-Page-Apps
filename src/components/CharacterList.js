@@ -57,7 +57,7 @@ export default function CharacterList() {
 
 const StyledSection = styled(animated.section)``
 const ButtonWrapper = styled.div`
-  margin: 10px auto;
+  margin: 20px auto 0;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
