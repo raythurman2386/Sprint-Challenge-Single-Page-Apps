@@ -3,6 +3,7 @@ import Axios from 'axios'
 import { useSpring, animated, config } from 'react-spring'
 import styled from 'styled-components'
 import { Card, Image, Button } from 'semantic-ui-react'
+import Skeleton from 'react-loading-skeleton'
 
 // Character List Component
 export default function CharacterList() {
